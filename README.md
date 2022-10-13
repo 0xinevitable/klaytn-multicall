@@ -5,6 +5,10 @@
 </h1>
 
 <p align="center">
+  Built for <a href="https://github.com/inevitable-changes/bento">inevitable-changes/<strong>bento</strong></a>
+</p>
+
+<p align="center">
   <a aria-label="NPM version" href="https://www.npmjs.com/package/klaytn-multicall">
     <img alt="" src="https://img.shields.io/npm/v/klaytn-multicall.svg?style=for-the-badge&labelColor=000000">
   </a>
