@@ -179,14 +179,14 @@ export type MulticallOptions = {
 
 export class Multicall {
   provider: Caver;
-  multicall: Contract;
+  contract: Contract;
   multicallV2Address: string;
 
   constructor(options: MulticallOptions) {
     this.provider = options.provider;
     this.multicallV2Address =
       options.multicallV2Address || MULTICALL_ADDRESS.cypress;
-    this.multicall = new this.provider.klay.Contract(
+    this.contract = new this.provider.klay.Contract(
       MULTICALL_ABI,
       this.multicallV2Address,
     );
@@ -198,7 +198,7 @@ export class Multicall {
       callData: call.encodeABI(),
     }));
 
-    const { returnData } = await this.multicall.methods
+    const { returnData } = await this.contract.methods
       .aggregate(callRequests)
       .call();
 
