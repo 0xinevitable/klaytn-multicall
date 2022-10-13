@@ -63,16 +63,18 @@ await multicall.aggregate(calls)
 - `getCurrentBlockCoinbase`: Gets the current block coinbase
 
 ```ts
+const multicall = new Multicall({ provider });
+
 const calls = [
   staking.methods.balanceOf('0x7777777141f111cf9f0308a63dbd9d0cad3010c4'),
   staking.methods.rewardsOf('0x7777777141f111cf9f0308a63dbd9d0cad3010c4'),
 
   // Queries KLAY balance of address
-  Multicall.contract.getEthBalance(
+  multicall.contract.getEthBalance(
     '0x7777777141f111cf9f0308a63dbd9d0cad3010c4',
   ),
-  Multicall.contract.getBlockHash('0x7777777141f111cf9f0308a63dbd9d0cad3010c4'),
-  Multicall.contract.getLastBlockHash(
+  multicall.contract.getBlockHash('0x7777777141f111cf9f0308a63dbd9d0cad3010c4'),
+  multicall.contract.getLastBlockHash(
     '0x7777777141f111cf9f0308a63dbd9d0cad3010c4',
   ),
 ];
