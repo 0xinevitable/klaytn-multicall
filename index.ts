@@ -1,4 +1,3 @@
-// Soon be published on NPM; https://github.com/junhoyeo/klaytn-multicall/blob/main/index.ts
 import Caver, { Contract } from 'caver-js';
 
 const MULTICALL_ABI: any[] = [
@@ -9,7 +8,7 @@ const MULTICALL_ABI: any[] = [
           { internalType: 'address', name: 'target', type: 'address' },
           { internalType: 'bytes', name: 'callData', type: 'bytes' },
         ],
-        internalType: 'struct Multicall2.Call[]',
+        // internalType: 'struct Multicall2.Call[]',
         name: 'calls',
         type: 'tuple[]',
       },
@@ -19,7 +18,7 @@ const MULTICALL_ABI: any[] = [
       { internalType: 'uint256', name: 'blockNumber', type: 'uint256' },
       { internalType: 'bytes[]', name: 'returnData', type: 'bytes[]' },
     ],
-    stateMutability: 'nonpayable',
+    // stateMutability: 'nonpayable',
     type: 'function',
   },
 ];
