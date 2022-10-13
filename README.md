@@ -1,4 +1,20 @@
-# Klaytn Multicall
+[![Cover Image](https://raw.githubusercontent.com/junhoyeo/klaytn-multicall/main/docs/images/cover.jpg)](https://github.com/junhoyeo)
+
+<h1 align="center">
+  Klaytn Multicall
+</h1>
+
+<p align="center">
+  <a aria-label="NPM version" href="https://www.npmjs.com/package/klaytn-multicall">
+    <img alt="" src="https://img.shields.io/npm/v/klaytn-multicall.svg?style=for-the-badge&labelColor=000000">
+  </a>
+  <a aria-label="NPM bundle size" href="https://github.com/junhoyeo/klaytn-multicall/blob/main/LICENSE.md">
+    <img alt="" src="https://img.shields.io/bundlephobia/minzip/klaytn-multicall.svg?style=for-the-badge&labelColor=000000">
+  </a>
+  <a aria-label="License" href="https://www.npmjs.com/package/klaytn-multicall">
+    <img alt="" src="https://img.shields.io/npm/l/klaytn-multicall.svg?style=for-the-badge&labelColor=000000">
+  </a>
+</p>
 
 ```ts
 import Mutlicall from 'klaytn-multicall';
