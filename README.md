@@ -73,10 +73,8 @@ const calls = [
   multicall.contract.getEthBalance(
     '0x7777777141f111cf9f0308a63dbd9d0cad3010c4',
   ),
-  multicall.contract.getBlockHash('0x7777777141f111cf9f0308a63dbd9d0cad3010c4'),
-  multicall.contract.getLastBlockHash(
-    '0x7777777141f111cf9f0308a63dbd9d0cad3010c4',
-  ),
+  multicall.contract.getBlockHash(103742609),
+  multicall.contract.getLastBlockHash(),
 ];
 
 await multicall.aggregate(calls).then(console.log);
