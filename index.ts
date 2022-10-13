@@ -63,7 +63,7 @@ export class Multicall {
         o.internalType !== o.type && o.internalType !== undefined ? o : o.type,
       );
 
-      const result = Caver.abi.decodeParameters(types, hex);
+      const result = this.provider.abi.decodeParameters(types, hex);
       return Object.values(result);
     });
 
