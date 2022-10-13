@@ -1,6 +1,7 @@
 {
   "minify": true,
   "jsc": {
+    "loose": true,
     "parser": {
       "syntax": "typescript",
       "tsx": false
@@ -11,5 +12,10 @@
       },
       "mangle": true
     }
+  },
+  "module": {
+    "type": "commonjs",
+    "strict": true,
+    "noInterop": true
   }
 }
