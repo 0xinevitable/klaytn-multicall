@@ -1,3 +1,4 @@
+// Soon be published on NPM; https://github.com/junhoyeo/klaytn-multicall/blob/main/index.ts
 import Caver, { Contract } from 'caver-js';
 
 const MULTICALL_ABI: any[] = [
@@ -41,10 +42,13 @@ export class Multicall {
     this.provider = options.provider;
     this.multicallV2Address =
       options.multicallV2Address || MULTICALL_ADDRESS.cypress;
-    this.multicall = new Contract(MULTICALL_ABI, this.multicallV2Address);
+    this.multicall = new this.provider.klay.Contract(
+      MULTICALL_ABI,
+      this.multicallV2Address,
+    );
   }
 
-  aggregate = async (calls: any[]) => {
+  aggregate = async (calls: any[]): Promise<any[]> => {
     const callRequests = calls.map((call) => ({
       target: call._parent._address,
       callData: call.encodeABI(),
