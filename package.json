@@ -7,10 +7,12 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "build": "rm -rf ./lib && tsc"
+    "build": "rm -rf ./lib && swc index.ts --config-file .swcrc -d lib"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.4.2",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.3.7",
     "@types/node": "^18.8.5",
     "caver-js": "^1.9.0",
     "prettier": "^2.7.1",
