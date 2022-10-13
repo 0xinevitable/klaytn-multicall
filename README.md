@@ -4,7 +4,7 @@
 import Mutlicall from 'klaytn-multicall';
 
 const caver = new Caver(...);
-const staking = new Contract(...);
+const staking = new caver.klay.Contract(...);
 const calls = [
   staking.methods.balanceOf(
     '0x7777777141f111cf9f0308a63dbd9d0cad3010c4',
