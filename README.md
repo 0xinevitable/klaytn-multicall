@@ -17,7 +17,7 @@
 </p>
 
 ```ts
-import Mutlicall from 'klaytn-multicall';
+import { Multicall } from 'klaytn-multicall';
 
 const caver = new Caver(...);
 const staking = new caver.klay.Contract(...);
@@ -34,6 +34,8 @@ const multicall = new Multicall({ provider });
 await multicall.aggregate(calls)
   .then((console.log));
 ```
+
+You can inject contract address of your custom implementation, too:
 
 ```ts
 new Multicall({
