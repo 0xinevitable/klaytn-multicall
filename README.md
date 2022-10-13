@@ -14,7 +14,16 @@ const calls = [
   ),
 ];
 
-const multicall = new Multicall(provider);
+const multicall = new Multicall({ provider });
 await multicall.aggregate(calls)
   .then((console.log));
 ```
+
+```ts
+new Multicall({
+  provider,
+  multicallV2Address: '0xd11dfc2ab34abd3e1abfba80b99aefbd6255c4b8',
+});
+```
+
+`multicallV2Address` defaults to [`0xd11dfc2ab34abd3e1abfba80b99aefbd6255c4b8`](https://scope.klaytn.com/account/0xd11dfc2ab34abd3e1abfba80b99aefbd6255c4b8?tabId=contractCode)([**Multicall2**](https://github.com/makerdao/multicall/blob/master/src/Multicall2.sol) deployed in Cypress).

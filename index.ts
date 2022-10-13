@@ -23,15 +23,25 @@ const MULTICALL_ABI: any[] = [
   },
 ];
 
-const MULTICALL_ADDRESS = '0xd11dfc2ab34abd3e1abfba80b99aefbd6255c4b8';
+export const MULTICALL_ADDRESS = {
+  cypress: '0xd11dfc2ab34abd3e1abfba80b99aefbd6255c4b8',
+};
+
+export type MulticallOptions = {
+  provider: Caver;
+  multicallV2Address?: string;
+};
 
 export class Multicall {
   provider: Caver;
   multicall: Contract;
+  multicallV2Address: string;
 
-  constructor(provider: Caver) {
-    this.provider = provider;
-    this.multicall = new Contract(MULTICALL_ABI, MULTICALL_ADDRESS);
+  constructor(options: MulticallOptions) {
+    this.provider = options.provider;
+    this.multicallV2Address =
+      options.multicallV2Address || MULTICALL_ADDRESS.cypress;
+    this.multicall = new Contract(MULTICALL_ABI, this.multicallV2Address);
   }
 
   aggregate = async (calls: any[]) => {
