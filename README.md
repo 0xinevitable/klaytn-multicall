@@ -5,7 +5,8 @@
 </h1>
 
 <p align="center">
-  Built for <a href="https://github.com/inevitable-changes/bento">inevitable-changes/<strong>bento</strong></a>
+  Built for <a href="https://github.com/inevitable-changes/bento">inevitable-changes/<strong>bento</strong></a><br />
+  <sub><i>Inspired by <a href="https://github.com/makerdao/multicall">makerdao/<strong>multicall</strong></a> and <a href="https://github.com/dopex-io/web3-multicall">dopex-io/<strong>web3-multicall</strong></a></i></sub>
 </p>
 
 <p align="center">
@@ -19,6 +20,17 @@
     <img alt="" src="https://img.shields.io/npm/l/klaytn-multicall.svg?style=for-the-badge&labelColor=000000">
   </a>
 </p>
+
+### 📦 Installation
+```bash
+# Yarn
+yarn install klaytn-multicall
+
+# NPM
+npm install klaytn-multicall
+```
+
+### 🚀 Usage
 
 ```ts
 import { Multicall } from 'klaytn-multicall';
