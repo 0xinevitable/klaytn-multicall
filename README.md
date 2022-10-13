@@ -70,11 +70,11 @@ const calls = [
   staking.methods.rewardsOf('0x7777777141f111cf9f0308a63dbd9d0cad3010c4'),
 
   // Queries KLAY balance of address
-  multicall.contract.getEthBalance(
+  multicall.contract.methods.getEthBalance(
     '0x7777777141f111cf9f0308a63dbd9d0cad3010c4',
   ),
-  multicall.contract.getBlockHash(103742609),
-  multicall.contract.getLastBlockHash(),
+  multicall.contract.methods.getBlockHash(103742609),
+  multicall.contract.methods.getLastBlockHash(),
 ];
 
 await multicall.aggregate(calls).then(console.log);
