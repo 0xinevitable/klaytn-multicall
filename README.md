@@ -5,7 +5,7 @@
 </h1>
 
 <p align="center">
-  Built for <a href="https://github.com/inevitable-changes/bento">inevitable-changes/<strong>bento</strong></a><br />
+  Built for <a href="https://github.com/inevitable-dao/bento">inevitable-dao/<strong>bento</strong></a><br />
   <sub><i>Inspired by <a href="https://github.com/makerdao/multicall">makerdao/<strong>multicall</strong></a> and <a href="https://github.com/dopex-io/web3-multicall">dopex-io/<strong>web3-multicall</strong></a></i></sub>
 </p>
 
@@ -22,6 +22,7 @@
 </p>
 
 ### 📦 Installation
+
 ```bash
 # Yarn
 yarn install klaytn-multicall
