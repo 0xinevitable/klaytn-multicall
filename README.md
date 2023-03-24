@@ -25,7 +25,7 @@
 
 ```bash
 # Yarn
-yarn install klaytn-multicall
+yarn add klaytn-multicall
 
 # NPM
 npm install klaytn-multicall
