@@ -36,7 +36,7 @@ npm install klaytn-multicall
 ```ts
 import { Multicall } from 'klaytn-multicall';
 
-const caver = new Caver(...);
+const provider = new Caver(...);
 const multicall = new Multicall({ provider });
 
 const staking = new caver.klay.Contract(...);
