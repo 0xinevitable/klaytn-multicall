@@ -189,9 +189,9 @@ export class Multicall {
     this.multicallV2Address =
       options.multicallV2Address || MULTICALL_ADDRESS.cypress;
     const Contract =
-      this.provider instanceof Web3
-        ? this.provider.eth.Contract
-        : this.provider.klay.Contract;
+      options.provider instanceof Caver
+        ? options.provider.klay.Contract
+        : options.provider.eth.Contract;
     this.contract = new Contract(
       MULTICALL_ABI as any[],
       this.multicallV2Address,
@@ -213,11 +213,9 @@ export class Multicall {
         o.internalType !== o.type && o.internalType !== undefined ? o : o.type,
       );
 
-      const decodeParameters =
-        this.provider instanceof Caver
-          ? this.provider.abi.decodeParameters
-          : this.provider.eth.abi.decodeParameters;
-      const result = decodeParameters(types, hex);
+      const utils =
+        this.provider instanceof Caver ? this.provider.klay : this.provider.eth;
+      const result = utils.abi.decodeParameters(types, hex);
       return Object.values(result);
     });
 
