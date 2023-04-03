@@ -53,7 +53,7 @@ await multicall.aggregate(calls)
   .then((console.log));
 ```
 
-From `1.1.1`, you can also use `web3` (to unify the interface or for other chains) as well.
+From version `1.1.1`, you can also use `web3` (to unify the interface or for other chains) as well.
 
 ```ts
 const ethereumProvider = new Web3(...); // Ethereum
