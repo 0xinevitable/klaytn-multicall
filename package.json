@@ -20,5 +20,9 @@
   },
   "files": [
     "./lib"
-  ]
+  ],
+  "dependencies": {
+    "web3": "^1.9.0",
+    "web3-eth-contract": "^1.9.0"
+  }
 }
