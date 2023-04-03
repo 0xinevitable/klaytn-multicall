@@ -53,6 +53,19 @@ await multicall.aggregate(calls)
   .then((console.log));
 ```
 
+From `1.1.0`, you can also use `web3` (to unify the interface or for other chains) as well.
+
+```ts
+const ethereumProvider = new Web3(...); // Ethereum
+const klaytnProvider = new Caver(...); // Klaytn
+
+const multicall = new Multicall({
+  provider: Config.CHAIN === 'klaytn'
+    ? klaytnProvider
+    : ethereumProvider
+});
+```
+
 ### Helpers live inside
 
 - `getEthBalance`: Gets the ~~ETH~~ **KLAY** balance of an address

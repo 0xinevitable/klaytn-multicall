@@ -1,4 +1,6 @@
-import Caver, { Contract } from 'caver-js';
+import Caver, { Contract as CaverContract } from 'caver-js';
+import Web3 from 'web3';
+import { Contract as Web3Contract } from 'web3-eth-contract';
 
 export const MULTICALL_ADDRESS = {
   cypress: '0xd11dfc2ab34abd3e1abfba80b99aefbd6255c4b8',
@@ -173,21 +175,25 @@ export const MULTICALL_ABI = [
 ];
 
 export type MulticallOptions = {
-  provider: Caver;
+  provider: Caver | Web3;
   multicallV2Address?: string;
 };
 
 export class Multicall {
-  provider: Caver;
-  contract: Contract;
+  provider: Caver | Web3;
+  contract: CaverContract | Web3Contract;
   multicallV2Address: string;
 
   constructor(options: MulticallOptions) {
     this.provider = options.provider;
     this.multicallV2Address =
       options.multicallV2Address || MULTICALL_ADDRESS.cypress;
-    this.contract = new this.provider.klay.Contract(
-      MULTICALL_ABI,
+    const Contract =
+      this.provider instanceof Web3
+        ? this.provider.eth.Contract
+        : this.provider.klay.Contract;
+    this.contract = new Contract(
+      MULTICALL_ABI as any[],
       this.multicallV2Address,
     );
   }
@@ -207,7 +213,11 @@ export class Multicall {
         o.internalType !== o.type && o.internalType !== undefined ? o : o.type,
       );
 
-      const result = this.provider.abi.decodeParameters(types, hex);
+      const decodeParameters =
+        this.provider instanceof Caver
+          ? this.provider.abi.decodeParameters
+          : this.provider.eth.abi.decodeParameters;
+      const result = decodeParameters(types, hex);
       return Object.values(result);
     });
 
